@@ -1,0 +1,49 @@
+// Copyright 2023 gRPC authors.
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//     http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+syntax = "proto3";
+
+package rich.error.model.demo;
+option csharp_namespace = "REM.Example";
+
+// Service definition for the rich error model demo.
+service RichErrorModelDemo {
+  // Send a request to echo the request or force an error to be returned
+  rpc EchoRequest (DemoRequest) returns (DemoResponse) {}
+}
+
+enum Action {
+  // Unspecified action
+  ACTION_UNSPECIFIED = 0;
+  // Echo the request in the response
+  ACTION_ECHO = 1;
+  // Return a simple error in the response
+  ACTION_SIMPLE_ERROR = 2;
+  // Return a complex error in the response
+  ACTION_COMPLEX_ERROR = 3;
+}
+
+// The request message.
+message DemoRequest {
+  // Action to take, e.g. echo request or return an error
+  Action action = 1;
+  // message
+  string message = 2;
+}
+
+// The response message
+message DemoResponse {
+  // echhoed message returned
+  string echoedMessage = 1;
+}

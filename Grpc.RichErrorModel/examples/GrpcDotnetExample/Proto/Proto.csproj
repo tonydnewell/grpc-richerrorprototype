@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+	<Nullable>enable</Nullable>
+	<LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.23.0" />
+    <PackageReference Include="Grpc" Version="2.46.6" />
+
+    <!--
+    Once there is a Grpc.RichErrorModel NuGet package
+    <PackageReference Include="Grpc.RichErrorModel" Version="2.53.0" />
+    -->
+	
+    <PackageReference Include="Grpc.Tools" Version="2.53.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Grpc.RichErrorModel\Grpc.RichErrorModel.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="RichErrorModelDemo.proto" Link="RichErrorModelDemo.proto" />
+  </ItemGroup>
+
+</Project>

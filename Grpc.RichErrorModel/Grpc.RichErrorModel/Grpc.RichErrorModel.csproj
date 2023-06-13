@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net462;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+
+  <!-- NuGet package details -->
+  <PropertyGroup>
+    <PackageId>Grpc.RichErrorModel.Prototype</PackageId>
+    <Version>1.0.0-dev</Version>
+    <Description>PROTOTYPE gRPC C# Rich Error Model API</Description>
+    <PackageTags>gRPC RPC HTTP/2</PackageTags>
+    <Authors>PROTOTYPE The gRPC Authors</Authors>
+    <Copyright>PROTOTYPE Copyright 2023 The gRPC Authors</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/grpc/grpc-dotnet</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    
+    <!-- Include PDB in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <IsGrpcPublishedPackage>true</IsGrpcPublishedPackage>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.Core.Api" Version="2.53.0" />
+    <PackageReference Include="Google.Api.CommonProtos" Version="2.10.0" />
+  </ItemGroup>
+  
+    <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+
+
+</Project>
