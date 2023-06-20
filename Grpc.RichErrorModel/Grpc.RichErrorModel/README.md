@@ -9,7 +9,7 @@ It had dependencies NuGet packages on:
 
 The client side borrows from ideas used in [googleapi/gax-dotnet](https://github.com/googleapis/gax-dotnet), specifically [RpcExceptionExtensions.cs](https://github.com/googleapis/gax-dotnet/blob/main/Google.Api.Gax.Grpc/RpcExceptionExtensions.cs)
 
-The server side uses extension methods to facilitate using C#'s Object and Collection initializer syntax. The avoids the needs to a *builder* API to be developed.
+The server side uses extension methods to facilitate using C#'s Object and Collection initializer syntax. The avoids the need for a *builder* API to be developed.
 
 ## Server Side
 
